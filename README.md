@@ -25,14 +25,14 @@ This system integrates an ESP32 microcontroller paired with an MPU6050 6-axis se
 | SCL | GPIO22 | I2C Clock |
 | SDA | GPIO21 | I2C Data |
 
-## 📁 Repository Structure
+##  Repository Structure
 * `/Hardware` - ESP32 Arduino code for sensor reading and Wi-Fi transmission.
 * `/ML_Pipeline` - Google Colab notebooks for training the Random Forest model and dataset.
 * `/Android_App` - Complete Kotlin Android Studio project source code.
 
 ## ⚙️ How to Run the Project
 1. **Hardware:** Flash the code in `/Hardware` to your ESP32. Update the Wi-Fi credentials in the code to match your phone's mobile hotspot.
-2. **Android App:** Open the `/Android_App` folder in Android Studio. Build and run the app on a physical Android device. 
+2. **Android App:** provided all the necessary code files to run the app manage the files and install the app to android device. 
 3. **Connect:** Turn on your phone's mobile hotspot. The ESP32 will connect automatically and begin transmitting data to the app's local NanoHTTPD server.
 
 ## 👨‍💻 Author
