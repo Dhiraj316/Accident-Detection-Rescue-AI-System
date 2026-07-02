@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F5F5">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Header -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Accident Detector"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:textColor="#212121"
+            android:gravity="center"
+            android:paddingBottom="8dp"/>
+
+        <!-- Status card -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp"
+            xmlns:app="http://schemas.android.com/apk/res-auto">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="STATUS"
+                    android:textSize="11sp"
+                    android:textColor="#9E9E9E"
+                    android:letterSpacing="0.1"/>
+                <TextView
+                    android:id="@+id/tvStatus"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text=" Starting..."
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="#212121"
+                    android:paddingTop="4dp"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Sensor readings card -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp"
+            xmlns:app="http://schemas.android.com/apk/res-auto">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="LIVE SENSOR DATA"
+                    android:textSize="11sp"
+                    android:textColor="#9E9E9E"
+                    android:letterSpacing="0.1"
+                    android:paddingBottom="8dp"/>
+
+                <!-- 2 column grid for sensor values -->
+                <LinearLayout android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView android:id="@+id/tvAx"
+                        android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:text="ax: --"
+                        android:textSize="14sp" android:fontFamily="monospace"/>
+                    <TextView android:id="@+id/tvGx"
+                        android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:text="gx: --"
+                        android:textSize="14sp" android:fontFamily="monospace"/>
+                </LinearLayout>
+                <LinearLayout android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView android:id="@+id/tvAy"
+                        android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:text="ay: --"
+                        android:textSize="14sp" android:fontFamily="monospace"/>
+                    <TextView android:id="@+id/tvGy"
+                        android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:text="gy: --"
+                        android:textSize="14sp" android:fontFamily="monospace"/>
+                </LinearLayout>
+                <LinearLayout android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView android:id="@+id/tvAz"
+                        android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:text="az: --"
+                        android:textSize="14sp" android:fontFamily="monospace"/>
+                    <TextView android:id="@+id/tvGz"
+                        android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:text="gz: --"
+                        android:textSize="14sp" android:fontFamily="monospace"/>
+                </LinearLayout>
+
+                <View android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#E0E0E0"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"/>
+
+                <TextView android:id="@+id/tvMagnitude"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Magnitude: -- g"
+                    android:textSize="14sp"
+                    android:fontFamily="monospace"
+                    android:textColor="#1565C0"/>
+                <TextView android:id="@+id/tvScore"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="AI Score: --"
+                    android:textSize="14sp"
+                    android:fontFamily="monospace"
+                    android:textColor="#1565C0"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Alert card -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp"
+            xmlns:app="http://schemas.android.com/apk/res-auto">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp"
+                android:gravity="center">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="EMERGENCY RESPONSE"
+                    android:textSize="11sp"
+                    android:textColor="#9E9E9E"
+                    android:letterSpacing="0.1"
+                    android:paddingBottom="8dp"/>
+                <TextView
+                    android:id="@+id/tvCountdown"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textSize="48sp"
+                    android:textStyle="bold"
+                    android:textColor="#D32F2F"
+                    android:gravity="center"/>
+                <Button
+                    android:id="@+id/btnImOk"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:text=" I'M OK"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:backgroundTint="#4CAF50"
+                    android:layout_marginTop="8dp"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Contacts card -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp"
+            xmlns:app="http://schemas.android.com/apk/res-auto">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="EMERGENCY CONTACTS"
+                    android:textSize="11sp"
+                    android:textColor="#9E9E9E"
+                    android:letterSpacing="0.1"
+                    android:paddingBottom="8dp"/>
+                <EditText android:id="@+id/etFamily"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Family number (e.g. +919876543210)"
+                    android:inputType="phone"
+                    android:layout_marginBottom="8dp"/>
+                <EditText android:id="@+id/etPolice"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Police number"
+                    android:inputType="phone"
+                    android:layout_marginBottom="8dp"/>
+                <EditText android:id="@+id/etAmbulance"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Ambulance number"
+                    android:inputType="phone"
+                    android:layout_marginBottom="12dp"/>
+                <Button android:id="@+id/btnSaveContacts"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:text="Save Contacts"
+                    android:backgroundTint="#1565C0"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+</ScrollView>
